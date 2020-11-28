@@ -45,6 +45,11 @@ A set of data and questions for a Christmas themed SQL challenge
                 L   __\          '-----'
                  '.____)             _/
 ```
+## Data
+The data is a mix of randomly generated data and the dataset of toys sourced from this [Kaggle Dataset](https://www.kaggle.com/PromptCloudHQ/toy-products-on-amazon). The ERD is as follows:
+![](ERD.jpg)
+Scripts to create the tables (without the primary/foreign key constraints) are available in the `.sql` file and the data itself is in `.csv`s in `xmas_wishes.zip`.
+
 ## Questions
 
 1) 
@@ -55,7 +60,7 @@ Time to make your list and check it twice, this question is all about who is nau
 2)
 ![](https://media1.giphy.com/media/RBXPb1NV7BB28/giphy.gif)
 
-Ho, Ho, Hold on! Some of these children are too young to make a wish to Santa, and some of these are quite old, Santa needs you to make sure they believe enough in Christmas to still get their presents from him. No children under 3 years old on Christmas morning will get any presents (their parents clearly wrote the letter), if they are older than 10 on Christmas morning then they need a belief of at least 70% to still get their presents, and if they are over 15 they need a belief of at least 90% to still get their wish! Using the TRAINING.XMAS_CHILDREN table, how many nice children are left for Santa to spread Christmas cheer to once you take this into account?
+Ho, Ho, Hold on! Some of these children are too young to make a wish to Santa, and some of these are quite old, Santa needs you to make sure they believe enough in Christmas to still get their presents from him. No children under 3 years old on Christmas morning will get any presents (their parents clearly wrote the letter), if they are 10 or older on Christmas morning then they need a belief of at least 70% to still get their presents, and if they are 15 or older they need a belief of at least 90% to still get their wish! Using the TRAINING.XMAS_CHILDREN table, how many nice children are left for Santa to spread Christmas cheer to once you take this into account?
 
 3)
 ![](https://media1.giphy.com/media/l0MYN7mdvcZBBpEly/giphy.gif?cid=ecf05e4724i2apjdj9mgn0ji8bj0x0sqdy1yph2a4kph8qph&rid=giphy.gif)
@@ -65,7 +70,7 @@ Santa can't grant wishes like world peace and only you can spread joy through yo
 4) 
 ![](https://media2.giphy.com/media/YkOGa9K7gc3g5u7FXF/giphy.gif?cid=ecf05e47cnhm44k3q02a3cfouz2n9a9i0xd0riowgb7zdc10&rid=giphy.gif)
 
-Unfortunately Santa doesn't qualify for the furlough scheme and he doesn't have work for 364 days of the year! It's been a tough year for Christmas cheer, and he runs a business so even he isn't above outsourcing the work to giant corporates. If he did purchase the toys at the price in the TRAINING.XMAS_TOYS table he thinks he could get a 5% discount for any manufacturer he is buying more than 1000 products from; if he got this how much would it cost instead?
+Unfortunately Santa doesn't qualify for the furlough scheme and he doesn't have work for 364 days of the year! It's been a tough year for Christmas cheer, and he runs a business so even he isn't above outsourcing the work to giant corporates. If he did purchase the toys at the price in the TRAINING.XMAS_TOYS table he thinks he could get a 5% discount for any manufacturer he is buying 50 or more products from; if he got this how much would it cost instead (rounded to the nearest pence)?
 
 5) 
 ![](https://media3.giphy.com/media/sueCeRU3VUTKg/giphy.gif?cid=ecf05e47mdaw059ml47intb7xxwpn2k5otrqmjho0nshc5nz&rid=giphy.gif)

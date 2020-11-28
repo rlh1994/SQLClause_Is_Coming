@@ -38,3 +38,61 @@
    (	"CHILD_ID" NUMBER(7,0), 
 	"TOY_ID" VARCHAR2(128)
    );
+
+
+--------------------------------------------------------
+--  Table Indexes
+--------------------------------------------------------
+CREATE INDEX IND_XMAS_WSH_TOY 
+ON xmas_wishes(TOY_ID);
+
+--------------------------------------------------------
+--  Table Comments
+--------------------------------------------------------
+COMMENT ON COLUMN xmas_behaviours.child_id IS
+	'Unique ID for each child (FK XMAS_CHILDREN)';
+
+COMMENT ON COLUMN xmas_behaviours.event_date IS
+	'Date of the event for the behaviour';
+
+COMMENT ON COLUMN xmas_behaviours.score IS
+	'Score for the event between -1 (fully naughty) and 1 (fully nice)';
+
+COMMENT ON COLUMN xmas_children.child_id IS
+	'Unique ID for each child (PK)';
+
+COMMENT ON COLUMN xmas_children.name IS
+	'Name of the child (randomly generated)';
+
+COMMENT ON COLUMN xmas_children.country IS
+	'Country the child is in (randomly selected)';
+
+COMMENT ON COLUMN xmas_children.dob IS
+	'Date of birth (randomly generated)';
+
+COMMENT ON COLUMN xmas_children.belief IS
+	'Strength of their belief in Santa from 0 (no belief) to 1 (True Believer)';
+
+COMMENT ON COLUMN xmas_toys.uniq_id IS
+	'Unique ID of the toy for their wish (PK)';
+
+COMMENT ON COLUMN xmas_toys.product_name IS
+	'Name of toy';
+
+COMMENT ON COLUMN xmas_toys.manufacturer IS
+	'Manufacturer of toy';
+
+COMMENT ON COLUMN xmas_toys.price IS
+	'Price of toy in pounds and decimal pence';
+
+COMMENT ON COLUMN xmas_toys.average_review_rating IS
+	'Average rating of the toy in for "X.X out of 5 stars"';
+
+COMMENT ON COLUMN xmas_toys.amazon_category_sub_category IS
+	'Category tree of toy';
+
+COMMENT ON COLUMN xmas_wishes.child_id IS
+	'Unique ID for each child (FK XMAS_CHILDREN)';
+
+COMMENT ON COLUMN xmas_wishes.toy_id IS
+	'Unique ID of the toy for their wish (FK UNIQ_ID XMAS_TOYS)';
