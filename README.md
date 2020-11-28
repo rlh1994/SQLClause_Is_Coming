@@ -47,7 +47,7 @@ A set of data and questions for a Christmas themed SQL challenge
 ```
 ## Data
 The data is a mix of randomly generated data and the dataset of toys sourced from this [Kaggle Dataset](https://www.kaggle.com/PromptCloudHQ/toy-products-on-amazon). The ERD is as follows:
-![](ERD.jpg)
+![](ERD.JPG)
 Scripts to create the tables (without the primary/foreign key constraints) are available in the `.sql` file and the data itself is in `.csv`s in `xmas_wishes.zip`.
 
 ## Questions
