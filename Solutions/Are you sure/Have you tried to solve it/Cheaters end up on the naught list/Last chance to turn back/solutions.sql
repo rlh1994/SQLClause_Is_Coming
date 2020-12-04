@@ -46,16 +46,16 @@ WITH total_behav AS (
 		TRUNC(MONTHS_BETWEEN(DATE '2020-12-25',a.dob) / 12) < 10
 		OR (
 			TRUNC(MONTHS_BETWEEN(DATE '2020-12-25',a.dob) / 12) < 15
-			AND a.belief > 0.7
+			AND a.belief >= 0.7
 		)
 		OR (
 			TRUNC(MONTHS_BETWEEN(DATE '2020-12-25',a.dob) / 12) >= 15
-			AND a.belief > 0.9
+			AND a.belief >= 0.9
 		)
 	);
 
 -- Question 3: Cost of toys
--- Answer: £2052531.29
+-- Answer: Â£2052459.89
 WITH total_behav AS (
 	SELECT
 		child_id,
@@ -81,11 +81,11 @@ WITH total_behav AS (
 			TRUNC(MONTHS_BETWEEN(DATE '2020-12-25',a.dob) / 12) < 10
 			OR (
 				TRUNC(MONTHS_BETWEEN(DATE '2020-12-25',a.dob) / 12) < 15
-				AND a.belief > 0.7
+				AND a.belief >= 0.7
 			)
 			OR (
 				TRUNC(MONTHS_BETWEEN(DATE '2020-12-25',a.dob) / 12) >= 15
-				AND a.belief > 0.9
+				AND a.belief >= 0.9
 			)
 		)
 ) SELECT
@@ -98,12 +98,12 @@ WITH total_behav AS (
 	ON a.child_id = c.child_id
   WHERE
 	UPPER(b.amazon_category_sub_category) NOT LIKE '%SEX ' || CHR(38) || ' SENSUALITY%'
-	AND UPPER(b.amazon_category_sub_category) NOT LIKE '%Sandwich Spreads, Pates ' || CHR(38) || ' Pastes%'
+	AND UPPER(b.amazon_category_sub_category) NOT LIKE '%SANDWICH SPREADS, PATES ' || CHR(38) || ' PASTES%'
 	AND SUBSTR(b.average_review_rating, 1, 1) IN ('4', '5');
 
 
 -- Question 4: Cost of toys with 5% discount
--- Answer: £1985288.91
+-- Answer: Â£1985217.51 (rounded from 1985217.5115)
 WITH total_behav AS (
 	SELECT
 		child_id,
@@ -129,11 +129,11 @@ WITH total_behav AS (
 			TRUNC(MONTHS_BETWEEN(DATE '2020-12-25', a.dob) / 12) < 10
 			OR (
 				TRUNC(MONTHS_BETWEEN(DATE '2020-12-25', a.dob) / 12) < 15
-				AND a.belief > 0.7
+				AND a.belief >= 0.7
 			)
 			OR (
 				TRUNC(MONTHS_BETWEEN(DATE '2020-12-25', a.dob) / 12) >= 15
-				AND a.belief > 0.9
+				AND a.belief >= 0.9
 			)
 		)
 ),manu_cost AS (
@@ -149,7 +149,7 @@ WITH total_behav AS (
 		ON a.child_id = c.child_id
 	WHERE
 		UPPER(b.amazon_category_sub_category) NOT LIKE '%SEX ' || CHR(38) || ' SENSUALITY%'
-		AND UPPER(b.amazon_category_sub_category) NOT LIKE '%Sandwich Spreads, Pates ' || CHR(38) || ' Pastes%'
+		AND UPPER(b.amazon_category_sub_category) NOT LIKE '%SANDWICH SPREADS, PATES ' || CHR(38) || ' PASTES%'
 		AND SUBSTR(average_review_rating, 1, 1) IN ('4', '5')
 	GROUP BY
 		b.manufacturer
